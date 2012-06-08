@@ -10,4 +10,10 @@ module EventsHelper
     button_type = options[:subscribe] ? 'primary' : 'warning'
     link_to label, toggle_subscription_event_path(event), method: :post, class: "btn btn-large btn-#{button_type} #{disabled_class}"
   end
+
+  def event_status(event)
+    if event.users.count < 3
+      image_tag "event-status/#{event.users.count}.jpeg", class: 'status'
+    end
+  end
 end
