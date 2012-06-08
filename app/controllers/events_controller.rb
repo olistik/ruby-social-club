@@ -7,4 +7,8 @@ class EventsController < ApplicationController
     resource.toggle_subscription(current_user)
     redirect_to :back
   end
+
+  def collection
+    @events ||= Event.order('start')
+  end
 end
