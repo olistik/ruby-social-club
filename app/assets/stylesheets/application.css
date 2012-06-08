@@ -11,5 +11,6 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap_header_fix
+ *= require prettify
  *= require_tree .
  */

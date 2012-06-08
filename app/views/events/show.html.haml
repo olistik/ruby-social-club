@@ -1,0 +1,11 @@
+%section.event
+  %h1= resource.start.to_date.to_s
+  - if resource.users.count > 0
+    %h2 Attendees list
+    %ul
+      - resource.users.each do |user|
+        %li= link_to user.name, "http://www.twitter.com/#{user.name}"
+  - else
+    .no_one
+      %p Nobody has subscribed to this event, yet.
+      = image_tag 'empty-chair.jpg'

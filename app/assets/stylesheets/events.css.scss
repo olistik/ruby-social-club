@@ -1,0 +1,22 @@
+.events {
+  td {
+    text-align: center;
+    vertical-align: middle;
+    &:first-child {
+      a {
+        width: 90%;
+      }
+    }
+    &:last-child {
+      a {
+        width: 40%;
+      }
+    }
+  }
+}
+
+section.event {
+  .no_one {
+    text-align: center;
+  }
+}

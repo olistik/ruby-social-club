@@ -1,5 +1,14 @@
 Rubysocialclub::Application.routes.draw do
-  root to: 'events#index'
+  root to: 'home#index'
 
-  resources :events
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :events do
+    member do
+      post 'toggle_subscription'
+    end
+  end
+
 end

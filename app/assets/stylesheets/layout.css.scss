@@ -1,0 +1,44 @@
+body {
+  margin: 0 auto;
+  width: 80%;
+  padding: 60px 0 2em 0;
+}
+
+.navbar {
+  .nav {
+    .account {
+      width: 100px;
+      span {
+        line-height: 40px;
+        float: left;
+      }
+      a {
+        float: left;
+        .not_logged & {
+          padding: 0;
+        }
+        .logged & {
+          i {
+            margin-left: 10px;
+          }
+        }
+        img {
+          margin-left: 8px;
+          width: 26px;
+          position: relative;
+          top: 7px;
+        }
+      }
+    }
+  }
+}
+.credits {
+  text-align: center;
+  img {
+    box-shadow: 0 0 4px 2px #222;
+    max-height: 48px;
+    border: 2px solid #222;
+    border-radius: 4px;
+    margin: 0 5px;
+  }
+}

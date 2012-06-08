@@ -1,0 +1,17 @@
+%pre.prettyprint
+  %code.language-ruby
+    = preserve do
+      :plain
+        module RubySocialClub
+          class Event
+            def start
+              @wisdom = @attendees.inject(&:knowledge)
+            end
+
+            def conclude
+              @attendees.each do |attendee|
+                person.knowledge += @wisdom
+              end
+            end
+          end
+        end

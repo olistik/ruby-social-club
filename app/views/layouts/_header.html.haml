@@ -1,0 +1,25 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      = link_to "RubySocialClub", root_path, class: 'brand'
+
+      .nav
+        %li
+          = link_to 'Events', events_path
+
+      .nav.pull-right
+        - if current_user
+          %li
+            %span.navbar-text
+              Signed in as
+              %b= "#{current_user.name}"
+        %li.account
+          - if current_user
+            = link_to ("Logout" + content_tag(:i, '', class: 'icon-user icon-white').html_safe).html_safe, signout_path
+          - else
+            %span Login:
+            - unless Rails.env.production?
+              = link_to image_tag('twitter.jpg', alt: 'twitter', size: '16x16'), "/auth/twitter"
+            - else
+              = link_to image_tag('twitter.jpg', alt: 'twitter', size: '16x16'), "/auth/developer"
+
