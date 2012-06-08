@@ -5,10 +5,11 @@ module EventsHelper
   end
 
   def subscription_button(event, options = {})
-    label = content_tag(:i, '', class: "icon-#{options[:subscribe] ? 'ok' : 'remove'} icon-white").html_safe
+    label = options[:subscribe] ? 'subscribe' : 'remove me'
+    label += content_tag(:i, '', class: "icon-#{options[:subscribe] ? 'ok' : 'remove'} icon-white").html_safe
     disabled_class = options[:enabled] ? '' : 'disabled'
     button_type = options[:subscribe] ? 'primary' : 'warning'
-    link_to label, toggle_subscription_event_path(event), method: :post, class: "btn btn-large btn-#{button_type} #{disabled_class}"
+    link_to label.html_safe, toggle_subscription_event_path(event), method: :post, class: "btn btn-large btn-#{button_type} #{disabled_class}"
   end
 
   def event_status(event)
