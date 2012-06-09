@@ -4,12 +4,16 @@
     vertical-align: middle;
     &:first-child {
       a {
-        width: 90%;
+        width: 80%;
       }
     }
     &:last-child {
       a {
-        width: 40%;
+        width: 30%;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
         i {
           margin-left: 10px;
         }
@@ -19,6 +23,13 @@
 }
 
 section.event {
+  & > .tabbable {
+    margin-top: 10px;
+    .tab-content {
+      float: left;
+      width: 70%;
+    }
+  }
   img.status {
     display: block;
     margin: 10px auto 0 auto;

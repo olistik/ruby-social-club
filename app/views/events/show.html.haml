@@ -1,8 +1,33 @@
 %section.event
   %h1= resource.start.to_date.to_s
-  - if resource.users.count > 0
-    %h2 Attendees list
-    %ul
-      - resource.users.each do |user|
-        %li= link_to user.name, "http://www.twitter.com/#{user.name}"
-  = event_status(resource)
+  .tabbable.tabs-left
+    %ul.nav.nav-tabs
+      %li.active
+        %a{href: '#topics', data: {toggle: 'tab'}} Topics
+      %li
+        %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
+      %li
+        %a{href: '#location', data: {toggle: 'tab'}} Location
+    .tab-content
+      .tab-pane.active#topics
+        %ul
+          - if resource.topics.count > 0
+            - resource.topics.each do |topic|
+              %li
+                %article
+                  %h1= topic.title
+                  %p= topic.author
+          - else
+            %p No topic has been proposed yet..
+            = image_tag "event-status/le_fu.jpeg", class: 'topics_status'
+
+      .tab-pane#attendees
+        - if resource.users.count > 0
+          %ul
+            - resource.users.each do |user|
+              %li= link_to user.name, "http://www.twitter.com/#{user.name}"
+        = event_users_status(resource.users)
+
+      .tab-pane.active#location
+        = link_to resource.location.address, resource.location.gmap_link, class: 'address'
+        .gmap= resource.location.gmap_code.html_safe

@@ -12,9 +12,10 @@ module EventsHelper
     link_to label.html_safe, toggle_subscription_event_path(event), method: :post, class: "btn btn-large btn-#{button_type} #{disabled_class}"
   end
 
-  def event_status(event)
-    if event.users.count < 3
-      image_tag "event-status/#{event.users.count}.jpeg", class: 'status'
+  def event_users_status(users)
+    if users.count < 3
+      image_tag "event-status/#{users.count}.jpeg", class: 'users_status'
     end
   end
+
 end
