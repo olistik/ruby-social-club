@@ -28,6 +28,6 @@
               %li= link_to user.name, "http://www.twitter.com/#{user.name}"
         = event_users_status(resource.users)
 
-      .tab-pane.active#location
+      .tab-pane#location
         = link_to resource.location.address, resource.location.gmap_link, class: 'address'
         .gmap= resource.location.gmap_code.html_safe
