@@ -1,0 +1,10 @@
+%ul
+  - if @event.topics.count > 0
+    - @event.topics.each do |topic|
+      %li
+        %article
+          %h1= topic.title
+          %p= topic.author
+  - else
+    %p No topic has been proposed yet..
+    = image_tag "event-status/le_fu.jpeg", class: 'topics_status'

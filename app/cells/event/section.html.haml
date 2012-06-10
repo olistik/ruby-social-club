@@ -1,0 +1,10 @@
+%section.event
+  %h1= @event.start.to_date.to_s
+  .tabbable.tabs-left
+    %ul.nav.nav-tabs
+      - @sections.each do |section|
+        %li{class: @active_section.to_s == section ? 'active' : ''}
+          = link_to section.humanize, url_for([@event, section])
+    .tab-content
+      .tab-pane.active{id: @active_section}
+        = render_cell :event, @active_section, @event

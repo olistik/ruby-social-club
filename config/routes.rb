@@ -9,6 +9,9 @@ Rubysocialclub::Application.routes.draw do
     member do
       post 'toggle_subscription'
     end
+    resources :topics, only: [:index]
+    resources :users, only: [:index]
+    resource :location, only: [:show]
   end
 
 end

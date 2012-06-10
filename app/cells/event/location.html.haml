@@ -1,0 +1,3 @@
+= link_to @event.location.gmap_link, class: 'address' do
+  %p.address= @event.location.address
+  = render_cell :event, :gmap_image, @event
