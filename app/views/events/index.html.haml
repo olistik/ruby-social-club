@@ -8,11 +8,8 @@
       %td.action
         - if current_user
           - if current_user.subscribed?(event)
-            = subscription_button(event, subscribe: true, enabled: false)
             = subscription_button(event, subscribe: false, enabled: true)
           - else
             = subscription_button(event, subscribe: true, enabled: true)
-            = subscription_button(event, subscribe: false, enabled: false)
         - else
           = subscription_button(event, subscribe: true, enabled: false)
-          = subscription_button(event, subscribe: false, enabled: false)
