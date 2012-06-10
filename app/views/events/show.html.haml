@@ -29,5 +29,6 @@
         = event_users_status(resource.users)
 
       .tab-pane#location
-        = link_to resource.location.address, resource.location.gmap_link, class: 'address'
-        .gmap= resource.location.gmap_code.html_safe
+        = link_to resource.location.gmap_link, class: 'address' do
+          %p.address= resource.location.address
+          = event_gmap_image(resource)
