@@ -5,6 +5,6 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body{class: current_user ? 'logged' : 'not_logged'}
+  %body{class: logged_in? ? 'logged' : 'not_logged'}
     = render 'layouts/header'
     = yield

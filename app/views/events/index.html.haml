@@ -5,11 +5,4 @@
     - subscribed = current_user && current_user.subscribed?(event)
     %tr{class: subscribed ? 'subscribed' : ''}
       %td= event_button(event, subscribed)
-      %td.action
-        - if current_user
-          - if current_user.subscribed?(event)
-            = subscription_button(event, subscribe: false, enabled: true)
-          - else
-            = subscription_button(event, subscribe: true, enabled: true)
-        - else
-          = subscription_button(event, subscribe: true, enabled: false)
+      %td.action= render_cell :event, :subscribe_button, event

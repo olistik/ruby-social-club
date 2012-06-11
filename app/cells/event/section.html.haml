@@ -1,5 +1,6 @@
 %section.event
   %h1= @event.start.to_date.to_s
+  = render_cell :event, :subscribe_button, @event
   .tabbable.tabs-left
     %ul.nav.nav-tabs
       - @sections.each do |section|

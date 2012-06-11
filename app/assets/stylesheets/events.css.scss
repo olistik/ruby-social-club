@@ -21,7 +21,12 @@
 section.event {
   & > h1 {
     text-align: center;
+    float: left;
+    & + a {
+      margin-left: 10px;
+    }
   }
+
   & > .tabbable {
     margin-top: 10px;
     .tab-content {
