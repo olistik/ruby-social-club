@@ -19,6 +19,9 @@
 }
 
 section.event {
+  & > h1 {
+    text-align: center;
+  }
   & > .tabbable {
     margin-top: 10px;
     .tab-content {
