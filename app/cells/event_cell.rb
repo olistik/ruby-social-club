@@ -42,12 +42,12 @@ class EventCell < Cell::Rails
   def subscribe_button(event)
     enable = controller.logged_in?
     subscribe = !controller.logged_in? || controller.logged_in? && !controller.current_user.subscribed?(event)
-
     label = subscribe ? 'subscribe me' : 'remove me'
-    label += content_tag(:i, '', class: "icon-#{subscribe ? 'ok' : 'remove'} icon-white").html_safe
+    label += content_tag(:i, '', class: "icon-#{subscribe ? 'ok' : 'remove'} icon-white")
     disabled_class = enable ? '' : 'disabled'
     button_type = subscribe ? 'primary' : 'warning'
-
-    render inline: link_to(label.html_safe, toggle_subscription_event_path(event), method: :post, class: "btn btn-large btn-#{button_type} #{disabled_class}")
+    html_class = "btn btn-large btn-#{button_type} #{disabled_class}"
+    link = toggle_subscription_event_path(event)
+    render inline: link_to(label.html_safe, link, method: :post, class: html_class)
   end
 end
