@@ -16,7 +16,7 @@ module EventsHelper
 
   def event_users_status(users)
     if users.count < 3
-      image_tag "event-status/#{users.count}.jpeg", class: 'users_status'
+      image_tag "event-status/#{users.count}.jpeg", class: 'users status'
     end
   end
 end
