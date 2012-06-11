@@ -8,6 +8,15 @@ bundle
 foreman start
 ```
 
+TODO
+____
+
+* users profile
+* notifications (social/e-mail)
+* social share (Google+/Twitter/Facebook)
+* talks wish list
+* Google Analytics
+
 License
 -------
 
