@@ -1,6 +1,7 @@
 # RubySocialClub
 
-## Usage
+Usage
+-----
 
 ```bash
 bundle
