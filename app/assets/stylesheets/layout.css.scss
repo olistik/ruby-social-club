@@ -34,11 +34,32 @@ body {
 }
 .credits {
   text-align: center;
+  float: left;
+  dt, dd {
+    margin-top: 10px;
+  }
+  dt {
+    width: 180px;
+    line-height: 52px;
+  }
+  dd {
+    float: left;
+    margin-left: 10px;
+  }
   img {
     box-shadow: 0 0 4px 2px #222;
     max-height: 48px;
     border: 2px solid #222;
     border-radius: 4px;
     margin: 0 5px;
+  }
+  &.developers {
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        float: left;
+      }
+    }
   }
 }
