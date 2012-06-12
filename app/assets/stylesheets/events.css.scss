@@ -5,6 +5,11 @@
     &:first-child {
       a {
         width: 80%;
+        .badge {
+          margin-left: 5px;
+          position: relative;
+          bottom: 1px;
+        }
       }
     }
     &:last-child {
