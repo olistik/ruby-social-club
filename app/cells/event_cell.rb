@@ -13,6 +13,8 @@ class EventCell < Cell::Rails
     @active_section = active_section
     @sections = %w[topics users location]
 
+    controller.send :set_meta_tags, title: @event.start.to_date.to_s
+
     render
   end
 
