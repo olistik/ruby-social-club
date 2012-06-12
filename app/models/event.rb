@@ -12,4 +12,11 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def ordered_topics
+    topics.ordered
+  end
+
+  def has_topics?
+    topics.count > 0
+  end
 end

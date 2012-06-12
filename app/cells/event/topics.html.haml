@@ -1,6 +1,6 @@
 %ul
-  - if @event.topics.count > 0
-    - @event.topics.each do |topic|
+  - if @event.has_topics?
+    - @event.ordered_topics.each do |topic|
       %li
         %article
           %h1= topic.title
