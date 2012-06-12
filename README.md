@@ -11,6 +11,7 @@ foreman start
 TODO
 ----
 
+* write tests
 * retrieve contributors directly from the GitHub repository
 * users profile
 * notifications (social/e-mail)
