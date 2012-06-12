@@ -1,5 +1,6 @@
 # RubySocialClub
 
+
 Usage
 -----
 
@@ -7,6 +8,8 @@ Usage
 bundle
 foreman start
 ```
+The website will be available at the url http://localhost:5000
+
 
 TODO
 ----
