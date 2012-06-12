@@ -3,6 +3,7 @@ class EventCell < Cell::Rails
 
   include ActionView::Helpers::AssetTagHelper
   include ActionView::Helpers::UrlHelper
+  include Cells::Rails::ActionController
 
   def controller(parent = parent_controller)
     parent.kind_of?(ApplicationController) ? parent : controller(parent.parent_controller)
@@ -12,10 +13,20 @@ class EventCell < Cell::Rails
     @event = event
     @active_section = active_section
     @sections = %w[topics users location]
-
-    controller.send :set_meta_tags, title: @event.start.to_date.to_s
-
+    set_metas(@event, @active_section)
     render
+  end
+
+  def set_metas(event, section)
+    title = "Event: #{event.start.to_date.to_s} > #{section.to_s.humanize}"
+    options = {
+      title: title,
+      open_graph: {
+        title: title,
+        url: request.url
+      }
+    }
+    controller.send :set_meta_tags, options
   end
 
   def topics(event)

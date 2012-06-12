@@ -5,8 +5,8 @@ module ApplicationHelper
       description: 'Let\'s code and have fun',
       open_graph: {
         title: 'Ruby Social Club',
-        url:   'http://www.rubysocialclub.com',
-        image: 'http://www.rubysocialclub.com/assets/logo.jpeg'
+        url:   request.base_url,
+        image: "#{request.base_url}/assets/logo.jpeg"
       }
     )
   end
