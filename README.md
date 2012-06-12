@@ -9,8 +9,9 @@ foreman start
 ```
 
 TODO
-____
+----
 
+* retrieve contributors directly from the GitHub repository
 * users profile
 * notifications (social/e-mail)
 * social share (Google+/Twitter/Facebook)
