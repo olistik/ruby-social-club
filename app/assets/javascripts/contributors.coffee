@@ -7,7 +7,9 @@ $ ->
       url:      'https://api.github.com/repos/olistik/ruby-social-club/contributors',
       success: (response) ->
         $.each response.data, ->
-          contributor = $("<a href=\"#{this.url}\">")
+          contributor = $('<li>')
+          home        = $("<a href=\"#{this.url}\">")
           avatar      = $("<img src=\"#{this.avatar_url}\"}>")
-          contributor.append avatar
+          home.append avatar
+          contributor.append home
           contributors.append contributor
