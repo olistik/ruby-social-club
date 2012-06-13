@@ -9,4 +9,5 @@
   %dt developed by
   %dd
     %ul
-
+      - ContributorCollection.new.each do |contributor|
+        %li= link_to image_tag(contributor.avatar_url, alt: contributor.login), contributor.url

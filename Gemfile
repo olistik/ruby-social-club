@@ -6,6 +6,8 @@ gem 'rails', '3.2.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'redis'
+gem 'faraday'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
                                :branch => 'static'
@@ -24,6 +26,7 @@ end
 
 group :development do
   gem 'pry'
+  gem 'pry-remote'
 end
 
 gem 'jquery-rails'
