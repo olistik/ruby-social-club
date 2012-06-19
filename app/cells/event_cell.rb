@@ -9,10 +9,11 @@ class EventCell < Cell::Rails
     parent.kind_of?(ApplicationController) ? parent : controller(parent.parent_controller)
   end
 
-  def section(event, active_section)
+  def section(event, active_section, topic = nil)
     @event = event
     @active_section = active_section
     @sections = %w[topics users location]
+    @topic = topic
     set_metas(@event, @active_section)
     render
   end
@@ -29,8 +30,9 @@ class EventCell < Cell::Rails
     controller.send :set_meta_tags, options
   end
 
-  def topics(event)
+  def topics(event, topic = nil)
     @event = event
+    @topic = topic
     render
   end
 

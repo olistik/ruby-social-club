@@ -3,8 +3,13 @@
     - @event.ordered_topics.each do |topic|
       %li
         %article
-          %h1= topic.title
-          %p= topic.author
+          = link_to event_topic_path(@event, topic) do
+            %h1= topic.title
+          - if @topic == topic
+            - unless topic.author.blank?
+              %p Who / #{topic.author}
+            - unless topic.description.blank?
+              %p What / #{topic.description.try(:html_safe)}
   - else
     %p No topic has been proposed yet..
     = image_tag "event-status/le_fu.jpeg", class: 'topics status'
