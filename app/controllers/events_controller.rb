@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.order('start')
+    @events = Event.incoming
   end
 
   def toggle_subscription

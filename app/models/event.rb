@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
   has_one :location
   has_many :topics
 
+  scope :incoming, where('start >= ?', Time.now).order('start')
+
   def toggle_subscription(user)
     if users.include?(user)
       users.delete user
