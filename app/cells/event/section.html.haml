@@ -8,7 +8,4 @@
           = link_to section.humanize, url_for([@event, section])
     .tab-content
       .tab-pane.active{id: @active_section}
-        - if @active_section == :topics && @topic
-          = render_cell :event, @active_section, @event, @topic
-        - else
-          = render_cell :event, @active_section, @event
+        = @section_content

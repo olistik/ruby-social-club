@@ -9,12 +9,12 @@ class EventCell < Cell::Rails
     parent.kind_of?(ApplicationController) ? parent : controller(parent.parent_controller)
   end
 
-  def section(event, active_section, topic = nil)
+  def section(event, active_section, section_content)
     @event = event
     @active_section = active_section
     @sections = %w[topics users location]
-    @topic = topic
     set_metas(@event, @active_section)
+    @section_content = section_content
     render
   end
 
