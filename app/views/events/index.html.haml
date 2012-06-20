@@ -1,4 +1,7 @@
-- unless current_user
+- if @past
+  %h1.events_timeline Past Events
+- elsif !current_user
+  %h1.events_timeline Incoming Events
   .alert.alert-info In order to subcribe, you have to login to Twitter
 %table.table.table-striped.table-bordered.events
   - @events.each do |event|

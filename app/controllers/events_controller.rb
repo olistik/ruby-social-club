@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.incoming
+    @past = params[:past]
+    @events = @past ? Event.past : Event.incoming
   end
 
   def toggle_subscription

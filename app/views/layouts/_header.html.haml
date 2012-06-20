@@ -4,8 +4,13 @@
       = link_to "RubySocialClub", root_path, class: 'brand'
 
       .nav
-        %li
-          = link_to 'Events', events_path
+        %li.dropdown
+          %a{class: "dropdown-toggle", 'data-toggle' => "dropdown", href: "#"}
+            Events
+            %span.caret
+          %ul.dropdown-menu
+            = link_to 'Incoming', events_path
+            = link_to 'Past', events_path(past: true)
 
         %li.account
           - if current_user

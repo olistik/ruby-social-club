@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
 
   scope :incoming, where('start >= ?', Time.now).order('start')
 
+  scope :past, where('start <= ?', Time.now).order('start')
+
   def toggle_subscription(user)
     if users.include?(user)
       users.delete user
