@@ -11,6 +11,11 @@ class EventCell < Cell::Rails
     parent.kind_of?(ApplicationController) ? parent : controller(parent.parent_controller)
   end
 
+  def section_with_content(event, section, *args)
+    content = render_state(section, event, *args)
+    render_state :section, event, section, content
+  end
+
   def section(event, active_section, section_content)
     @event = event
     @active_section = active_section
