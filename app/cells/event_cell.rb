@@ -32,9 +32,9 @@ class EventCell < Cell::Rails
     controller.send :set_meta_tags, options
   end
 
-  def topics(event, topic = nil)
+  def topics(event, selected = nil)
     @event = event
-    @topic = topic
+    @selected = selected
     render
   end
 

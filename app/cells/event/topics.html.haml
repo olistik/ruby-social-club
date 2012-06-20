@@ -5,7 +5,7 @@
         %article
           = link_to event_topic_path(@event, topic) do
             %h1= topic.title
-          - if @topic == topic
+          - if @selected == topic
             - unless topic.author.blank?
               %p Who / #{topic.author}
             - unless topic.description.blank?
