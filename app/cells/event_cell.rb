@@ -5,6 +5,8 @@ class EventCell < Cell::Rails
   include ActionView::Helpers::UrlHelper
   include Cells::Rails::ActionController
 
+  SECTIONS = %w[topics users location]
+
   def controller(parent = parent_controller)
     parent.kind_of?(ApplicationController) ? parent : controller(parent.parent_controller)
   end
@@ -12,7 +14,7 @@ class EventCell < Cell::Rails
   def section(event, active_section, section_content)
     @event = event
     @active_section = active_section
-    @sections = %w[topics users location]
+    @sections = SECTIONS
     set_metas(@event, @active_section)
     @section_content = section_content
     render
