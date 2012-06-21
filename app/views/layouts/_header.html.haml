@@ -2,8 +2,10 @@
   .navbar-inner
     .container
       = link_to "RubySocialClub", root_path, class: 'brand'
-
       .nav
+        %li
+          = link_to image_tag('https://ssl.gstatic.com/images/icons/gplus-32.png', size: '26x26'), 'https://plus.google.com/101563362811745279798', rel: 'publisher', class: 'google-plus'
+
         %li.dropdown
           %a{class: "dropdown-toggle", 'data-toggle' => "dropdown", href: "#"}
             Events
