@@ -23,7 +23,6 @@ class ContributorCollection
       REDIS.set 'contributors', github_data
       REDIS.expire 'contributors', 12.hours
     end
-
     contributors = JSON.parse github_data
     contributors.map do |contributor|
       Contributor.new contributor
