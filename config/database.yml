@@ -3,21 +3,15 @@ development:
   encoding: unicode
   database: rubysocialclub_development
   pool: 5
-  username: olistik
-  password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: rubysocialclub_test
   pool: 5
-  username: olistik
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: rubysocialclub_production
   pool: 5
-  username: olistik
-  password:
