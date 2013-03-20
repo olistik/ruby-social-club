@@ -19,6 +19,12 @@ REDISTOGO_URL=redis://localhost:6379/
 
 * make sure either Redis and Postgres are running
 
+```shell
+foreman run bundle exec rake db:create
+foreman run bundle exec rake db:migrate
+foreman start
+```
+
 ## Start
 
 ```bash
